@@ -1,0 +1,15 @@
+{
+  "name": "intro",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "author": "Duilio Felix",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.26.1"
+  },
+  "type": "module"
+}
