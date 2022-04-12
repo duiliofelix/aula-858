@@ -1,7 +1,12 @@
-import axios from 'axios';
+import express from 'express';
+import { productRouter } from './routes';
+import { PORT } from './constants';
 
-axios.get('http://www.google.com')
-  .then((response) => {
-    console.log(response.data);
-  })
-  .catch((objErro) => console.error(objErro.message));
+const server = express();
+
+server.use(express.json());
+server.use('/products/', productRouter);
+
+server.listen(PORT, () => {
+  console.log(`Listening on ${PORT}`);
+});
