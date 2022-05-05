@@ -1,14 +1,15 @@
 import { Router } from 'express';
+import ProductModel from '../database/models/products';
 
 const router = new Router();
 
-router.get('/:tipo?', (req, res) => {
-  console.log(req.query.pageSize);
-  console.log(req.params.tipo);
+router.get('/:tipo?', async (req, res) => {
+  const products = await ProductModel
+    .find({ type: req.params.tipo });
 
   res
     .status(200)
-    .json(req.body);
+    .json(products);
 });
 
 router.post('/', (req, res) => {

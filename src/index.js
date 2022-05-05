@@ -1,8 +1,12 @@
 import express from 'express';
-import { productRouter } from './routes';
-import { PORT } from './constants';
+import cors from 'cors';
+import './database/index.js';
+import { productRouter } from './routes/index.js';
+import { PORT } from './constants.js';
 
 const server = express();
+
+server.use(cors());
 
 server.use(express.json());
 server.use('/products/', productRouter);
