@@ -1,2 +1,2 @@
-// eslint-disable-next-line import/prefer-default-export
 export const PORT = process.env.PORT;
+export const MONGO_URL = process.env.MONGO_URL;
